@@ -42,7 +42,7 @@ class SparqlService {
         if (file.exists()) {
             file.delete()
         }
-        file << output
+        file << output.toString().trim()
     }
 
 }
