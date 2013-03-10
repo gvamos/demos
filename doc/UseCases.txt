@@ -1,0 +1,12 @@
+DEMOS (Demo System) use cases
+
+1. Analyst requests semantic web data
+2. Analyst publishes analysis to CMS
+3. Subscriber views article list on CMS
+4. Subscriber views article on CMS
+5. CMS renders JSON document via JSON specified template
+6. Analyst processes PDF 
+   Analyst creates google query returning PDF documents
+   Extract data from pdf into JSON 
+   Pack pdf,JSON into fingerprinted zipped package
+7. Analyst submits PDF URL and JSON url to Lucene index (Alfresco)
