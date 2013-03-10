@@ -29,7 +29,6 @@ class ReportController {
             render(view: "query", model: [query: params.query, filename: params.filename, output: params.output])
             return
         }
-        File file = new File(params.filename)
         if (!params.output) {
             println('Running query...')
             def result = sparqlService.queryJSON(params.query)
@@ -40,6 +39,10 @@ class ReportController {
         if (!report) {
             report = new Report(params)
             report.save(flush: true)
+        }
+        File file = new File(params.filename)
+        if (file.exists()) {
+            file.delete()
         }
         file << params.output
         flash.message = "Report published to ${params.filename}."
