@@ -3,6 +3,9 @@
 <meta name="layout" content="main"/>
 </head><body>
 
+<g:if test="${flash.error}">
+<div class="errors">${flash.error}</div>
+</g:if>
 <g:if test="${flash.message}">
 <div class="message">${flash.message}</div>
 </g:if>

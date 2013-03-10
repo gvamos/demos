@@ -24,6 +24,11 @@ class ReportController {
     }
 
     def publish() {
+        if (!params.filename) {
+            flash.error = "No filename entered."
+            render(view: "query", model: [query: params.query, filename: params.filename, output: params.output])
+            return
+        }
         File file = new File(params.filename)
         Report report = new Report(params)
         report.save(flush: true)
