@@ -36,8 +36,11 @@ class ReportController {
             params.output = result as grails.converters.JSON
             params.output.prettyPrint = true
         }
-        Report report = new Report(params)
-        report.save(flush: true)
+        Report report = Report.findByFilename(params.filename)
+        if (!report) {
+            report = new Report(params)
+            report.save(flush: true)
+        }
         file << params.output
         flash.message = "Report published to ${params.filename}."
         redirect(action: "query")
