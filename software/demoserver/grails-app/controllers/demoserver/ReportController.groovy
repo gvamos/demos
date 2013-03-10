@@ -30,6 +30,12 @@ class ReportController {
             return
         }
         File file = new File(params.filename)
+        if (!params.output) {
+            println('Running query...')
+            def result = sparqlService.queryJSON(params.query)
+            params.output = result as grails.converters.JSON
+            params.output.prettyPrint = true
+        }
         Report report = new Report(params)
         report.save(flush: true)
         file << params.output
