@@ -29,22 +29,12 @@ class ReportController {
             render(view: "query", model: [query: params.query, filename: params.filename, output: params.output])
             return
         }
-        if (!params.output) {
-            println('Running query...')
-            def result = sparqlService.queryJSON(params.query)
-            params.output = result as grails.converters.JSON
-            params.output.prettyPrint = true
-        }
         Report report = Report.findByFilename(params.filename)
         if (!report) {
             report = new Report(params)
             report.save(flush: true)
         }
-        File file = new File(params.filename)
-        if (file.exists()) {
-            file.delete()
-        }
-        file << params.output
+        sparqlService.writeJSON(params.query)
         flash.message = "Report published to ${params.filename}."
         redirect(action: "query")
     }

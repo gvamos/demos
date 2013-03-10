@@ -34,4 +34,15 @@ class SparqlService {
         return out
     }
 
+    def writeJSON(String query, String filename) {
+        def result = queryJSON(query)
+        def output = result as grails.converters.JSON
+        output.prettyPrint = true
+        File file = new File(filename)
+        if (file.exists()) {
+            file.delete()
+        }
+        file << output
+    }
+
 }
