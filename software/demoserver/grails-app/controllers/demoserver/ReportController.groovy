@@ -39,4 +39,17 @@ class ReportController {
         redirect(action: "query")
     }
 
+    def display() {
+        Report report = Report.get(params.id)
+        if (!report) {
+            render('')
+            return
+        }
+        File file = new File(report.filename)
+        if (!file.exists()) {
+            sparqlService.writeJSON(report.query, report.filename)
+        }
+        render(file.text)
+    }
+
 }
