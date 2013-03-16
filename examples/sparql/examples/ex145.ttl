@@ -1,0 +1,41 @@
+# filename: ex145.ttl
+
+@prefix e: <http://learningsparql.com/ns/expenses#> .
+@prefix d: <http://learningsparql.com/ns/data#> .
+
+d:m40392 e:description "breakfast" ;
+         e:date "2011-10-14T08:53" ;
+         e:amount 6.53 . 
+
+d:m40393 e:description "lunch" ;
+         e:date "2011-10-14T13:19" ;
+         e:amount 11.13 . 
+
+d:m40394 e:description "dinner" ;
+         e:date "2011-10-14T19:04" ;
+         e:amount 28.30 . 
+
+d:m40395 e:description "breakfast" ;
+         e:date "2011-10-15T08:32" ;
+         e:amount 4.32 . 
+
+d:m40396 e:description "lunch" ;
+         e:date "2011-10-15T12:55" ;
+         e:amount 9.45 . 
+
+d:m40397 e:description "dinner" ;
+         e:date "2011-10-15T18:54" ;
+         e:amount 31.45 . 
+
+d:m40398 e:description "breakfast" ;
+         e:date "2011-10-16T09:05" ;
+         e:amount 6.65 . 
+
+d:m40399 e:description "lunch" ;
+         e:date "2011-10-16T13:24" ;
+         e:amount 10.00 . 
+
+d:m40400 e:description "dinner" ;
+         e:date "2011-10-16T19:44" ;
+         e:amount 25.05 . 
+

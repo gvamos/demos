@@ -1,0 +1,20 @@
+-----------
+| s       |
+===========
+| :paperE |
+| :paperG |
+| :paperI |
+| :paperF |
+| :paperI |
+| :paperD |
+| :paperH |
+| :paperC |
+| :paperG |
+| :paperI |
+| :paperF |
+| :paperI |
+| :paperB |
+| :paperD |
+| :paperH |
+-----------
+
